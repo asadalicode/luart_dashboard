@@ -1,0 +1,88 @@
+@import "../../../../theme/mixings.scss";
+
+.container {
+    .title {
+        margin: 0px;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 48px;
+    }
+
+    .description {
+        margin: 0px 0px 2rem;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--offWhite);
+    }
+
+    .flexBox {
+        width: 100%;
+        gap: 2rem;
+
+        .form {
+            width: 70%;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.04);
+            box-sizing: border-box;
+            border: 1px solid var(--borderColor);
+            border-radius: 0.5rem;
+
+            .btnContainer {
+                .selectedBtn {
+                    color: var(--white) !important;
+                    background: rgba(255, 255, 255, 0.08) !important;
+                }
+
+                .btn {
+                    flex: 1;
+                    background: rgba(255, 255, 255, 0.04);
+                    text-transform: none;
+                    color: rgba(255, 255, 255, 0.52);
+                    font-size: 16px;
+                    opacity: 1;
+                    border: none;
+                    height: 3rem;
+                    transition: color 350ms ease 0s;
+                    position: relative;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+                }
+            }
+        }
+
+        .overview {
+            width: 30%;
+            height: 200px;
+            background-color: black;
+        }
+
+        @include for-size(phone-only) {
+            flex-direction: column;
+
+            .form {
+                order: 2;
+                width: 100%;
+            }
+
+            .overview {
+                order: 1;
+                width: 100%;
+            }
+        }
+
+        @include for-size(tablet-portrait-up) {
+            flex-direction: column;
+
+            .form {
+                order: 2;
+                width: 100%;
+            }
+
+            .overview {
+                order: 1;
+                width: 100%;
+            }
+        }
+    }
+}
