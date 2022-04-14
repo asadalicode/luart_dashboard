@@ -1,0 +1,205 @@
+@import '../../../../theme/mixings.scss';
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 50px 16px;
+    color: rgba(255, 255, 255, 0.88);
+
+    @include for-size(phone-only){
+        position: unset;
+    }
+    .footerSubContainer {
+        @include for-size(phone-only) {
+            margin-bottom: 2.7rem;
+        }
+
+        .widgetTitle {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--white);
+            margin: 0px 0px 13px;
+            line-height: 19px;
+            border-left: 1px solid var(--successColor);
+            padding-left: 10px;
+        }
+
+        .emailInputContainer {
+            height: 48px;
+            margin-top: 1.1rem;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 6px;
+            font-family: "Libre Franklin", sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+            display: flex;
+
+            input {
+                font: inherit;
+                letter-spacing: inherit;
+                color: currentcolor;
+                padding: 4px 0px 5px;
+                border: 0px;
+                background: none;
+                height: 1.4375em;
+                outline: none;
+                margin: 0px;
+                display: block;
+                min-width: 0px;
+                width: 100%;
+            }
+
+            button {
+                font-size: 1rem;
+                border: none;
+                margin: 0;
+                padding: 0;
+                margin-top: -2px;
+                line-height: 1.75;
+                background-color: transparent;
+                min-width: 64px;
+                border-radius: 4px;
+                transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                color: var(--successColor);
+            }
+        }
+
+        .agreements {
+            .checkBoxContainer {
+                display: block;
+                position: relative;
+                margin-top: 4px;
+                .greenmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 20px;
+                    width: 20px;
+                    background-color: transparent;
+                    border-radius: 4px;
+                    border: 1px solid var(--offWhite);
+
+                    &:hover {
+                        border: 1px solid var(--successColor);
+
+                    }
+
+                }
+
+                input {
+                    visibility: hidden;
+                }
+
+
+
+            }
+
+            p {
+                margin-left: 1rem;
+                font-size: 14px;
+                color: var(--white);
+                line-height: 26px !important;
+            }
+        }
+
+        .description {
+            margin: 0px;
+            font-size: 14px;
+            color: var(--white);
+            line-height: 26px;
+            margin-left: 0.7rem;
+        }
+
+        .socialList {
+            margin: 0px;
+            margin-left: 0.7rem;
+            padding: 0px;
+            list-style-type: none;
+            max-width: 100%;
+
+            li {
+                color: var(--white);
+                text-decoration: none;
+                transition: color 350ms ease 0s;
+                font-size: 14px;
+                margin-bottom: 0.5rem;
+
+                &:hover {
+                    color: var(--offWhite);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .removeBorder {
+            border: none;
+        }
+    }
+
+    .footerCopyright {
+        margin-top: 64px;
+
+        .footerBottomContainer {
+            .leftPortion {
+                img {
+                    width: 32px;
+                }
+
+                span {
+                    font-size: 14px;
+                    margin-left: 0.5rem;
+                }
+            }
+
+            .rightPortion {
+                .list {
+                    margin: 0px;
+                    padding: 0px;
+                    list-style-type: none;
+
+                    li {
+                        margin-left: 2rem;
+                        display: inline-block;
+                        color: var(--offWhite);
+
+                        &:hover {
+                            color: var(--white);
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            @include for-size(phone-only) {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+
+                .leftPortion {
+                    flex-direction: column !important;
+                    order: 2;
+
+                    span {
+                        margin-top: 0.6rem;
+                    }
+                }
+
+                .rightPortion {
+                    order: 1;
+
+                    .list {
+                        li {
+                            display: block;
+                            margin: 0;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

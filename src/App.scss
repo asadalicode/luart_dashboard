@@ -1,0 +1,21 @@
+:root {
+  --white: rgba(255, 255, 255, 0.88);
+  --offWhite: rgba(255, 255, 255, 0.52);
+  --offBlack: rgba(33, 33, 33, 0.72) !important;
+  --successColor: rgb(34, 237, 166);
+}
+
+
+body {
+  margin: 0px;
+  color: white !important;
+  min-height: 100vh !important;
+  background: rgb(29, 35, 67) !important;
+  width: 100%;
+  font-family: "Libre Franklin", sans-serif !important;
+  overflow-x: hidden !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
