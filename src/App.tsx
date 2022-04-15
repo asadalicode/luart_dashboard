@@ -23,32 +23,32 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar handleMobileNavbar={handleMobileNavbar} />
+      <BrowserRouter>
+        <Navbar handleMobileNavbar={handleMobileNavbar} />
 
+        {
+          !isMobileNavbarOpen &&
+          <>
+            <div className="container-fluid">
 
+              <div className="d-flex">
+                <div className="sideBar">
+                  <SideNavbar />
+                </div>
+                <div className="rightPortion container-fluid">
 
-      {
-        !isMobileNavbarOpen &&
-        <>
-          <div className="container-fluid">
-
-            <div className="d-flex">
-              <div className="sideBar">
-                <SideNavbar />
-              </div>
-              <div className="rightPortion container-fluid">
-                <BrowserRouter>
                   <Routes>
                     <Route path='/' element={<Staking />} />
                     <Route path='/liquidity' element={<Liquidity />} />
                   </Routes>
-                </BrowserRouter>
+                </div>
               </div>
             </div>
-          </div>
-          <Footer />
-        </>
-      }
+            <Footer />
+          </>
+        }
+      </BrowserRouter>
+
     </div>
   );
 }
