@@ -30,7 +30,7 @@ function App() {
       {
         !isMobileNavbarOpen &&
         <>
-          <div className="container">
+          <div className="container-fluid">
 
             <div className="d-flex">
               <div className="sideBar">
