@@ -96,7 +96,7 @@ const Navbar = ({ handleMobileNavbar }: any) => {
                             </Box>
 
                             <Box sx={{ display: { md: 'flex' } }}>
-                                <Button className={`mt-4 ${Style.connectWallet} `} >
+                                <Button className={`bg-light mt-4 ${Style.connectWallet} `} >
                                     <span>
                                         <Wallet height="20" />
                                     </span>

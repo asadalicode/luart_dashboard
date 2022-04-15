@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="container d-flex justify-content-center">
                     <div className="row">
 
-                        <div className={`col-12 col-lg-3 ${Style.footerSubContainer}`}>
+                        <div style={{marginRight:'30px'}} className={`col-12 col-lg-3 ${Style.footerSubContainer}`}>
                             <div className="widget subscribe no-box">
                                 <h5 className={`${Style.widgetTitle} ${Style.removeBorder}`}>Get the latest Luart updates<span></span></h5>
                                 <div className={`${Style.emailInputContainer}`}>
@@ -28,7 +28,7 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <div className={`col-12 col-lg-3  ${Style.footerSubContainer}`}>
+                        <div style={{marginRight:'20px'}} className={`col-12 col-lg-3  ${Style.footerSubContainer}`}>
                             <div className="widget no-box">
                                 <h5 className={`${Style.widgetTitle}`}>Apply to Launch NFTs<span></span></h5>
                                 <p className={Style.description}>
@@ -41,7 +41,7 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <div className={`col-12 col-lg-3  ${Style.footerSubContainer}`}>
+                        <div style={{marginRight:'20px'}} className={`col-12 col-lg-3  ${Style.footerSubContainer}`}>
                             <h5 className={`${Style.widgetTitle}`}>Platform Luart.io<span></span></h5>
                             <ul className={Style.socialList}>
                                 <li >NFT Launchpad</li>
@@ -51,7 +51,7 @@ const Footer = () => {
                             </ul>
                         </div>
 
-                        <div className={`col-12 col-lg-3  ${Style.footerSubContainer} mb-0   `}>
+                        <div className={`col-12 col-lg-2  ${Style.footerSubContainer} mb-0   `}>
 
                             <div className="widget no-box">
                                 <h5 className={`${Style.widgetTitle}`}>Social Media<span></span></h5>
