@@ -3,8 +3,10 @@
 .footer {
   width: 100%;
   background: rgba(255, 255, 255, 0.04);
-  padding: 50px 16px;
-  color: rgba(255, 255, 255, 0.88);
+  //   padding: 50px 16px;
+  //   color: rgba(255, 255, 255, 0.88);
+  padding: 68px 0px;
+  backdrop-filter: blur(32px);
 
   @include for-size(phone-only) {
     position: unset;
@@ -17,7 +19,7 @@
 
     .widgetTitle {
       font-weight: 600;
-      font-size: 16px;
+      font-size: 18px;
       color: var(--white);
       margin: 0px 0px 13px;
       line-height: 19px;

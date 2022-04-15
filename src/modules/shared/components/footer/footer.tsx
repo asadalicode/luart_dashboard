@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer id="footer" className={Style.footer}>
             <div className="main-footer widgets-dark typo-light">
-                <div className="container d-flex justify-content-center">
+                <div className="container-fluid d-flex justify-content-center">
                     <div className="grid-container">
 
                         <div className={`${Style.footerSubContainer}`}>
