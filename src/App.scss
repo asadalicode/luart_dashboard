@@ -5,9 +5,8 @@
   --offWhite: rgba(255, 255, 255, 0.52);
   --offBlack: rgba(33, 33, 33, 0.72) !important;
   --successColor: rgb(34, 237, 166);
-  --borderColor:rgba(255, 255, 255, 0.18);
+  --borderColor: rgba(255, 255, 255, 0.18);
 }
-
 
 body {
   margin: 0px;
@@ -18,16 +17,24 @@ body {
   overflow-x: hidden !important;
 }
 
+.grid-container {
+  max-width: 100%;
+  display: grid;
+  grid-row-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 0fr));
+  grid-column-gap: 60px;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
 
-.rightPortion{
+.rightPortion {
   margin-left: 1rem !important;
-  @include for-size(phone-only){
-    margin-left:  0 !important;
+  @include for-size(phone-only) {
+    margin-left: 0 !important;
   }
 }
-.flex-1{
+.flex-1 {
   flex: 1;
 }
