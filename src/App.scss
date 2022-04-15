@@ -1,3 +1,5 @@
+@import "./theme/mixings.scss";
+
 :root {
   --white: rgba(255, 255, 255, 0.88);
   --offWhite: rgba(255, 255, 255, 0.52);
@@ -19,4 +21,11 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.rightPortion{
+  margin-left: 1rem !important;
+  @include for-size(phone-only){
+    margin-left:  0 !important;
+  }
 }

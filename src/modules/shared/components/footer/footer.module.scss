@@ -6,9 +6,10 @@
     padding: 50px 16px;
     color: rgba(255, 255, 255, 0.88);
 
-    @include for-size(phone-only){
+    @include for-size(phone-only) {
         position: unset;
     }
+
     .footerSubContainer {
         @include for-size(phone-only) {
             margin-bottom: 2.7rem;
@@ -61,7 +62,6 @@
                 background-color: transparent;
                 min-width: 64px;
                 border-radius: 4px;
-                transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
                 color: var(--successColor);
             }
         }
@@ -71,6 +71,7 @@
                 display: block;
                 position: relative;
                 margin-top: 4px;
+
                 .greenmark {
                     position: absolute;
                     top: 0;

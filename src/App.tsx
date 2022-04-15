@@ -4,8 +4,14 @@ import Navbar from './modules/shared/components/navbar/navbar';
 import Footer from './modules/shared/components/footer/footer';
 import { useState } from 'react';
 import SideNavbar from './modules/shared/components/sideNavbar/sideNavbar';
-import { Style } from '@mui/icons-material';
 import Staking from './modules/home/components/staking/staking';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
+
 
 function App() {
   const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
@@ -17,6 +23,9 @@ function App() {
   return (
     <div className="App">
       <Navbar handleMobileNavbar={handleMobileNavbar} />
+
+
+
       {
         !isMobileNavbarOpen &&
         <>
@@ -26,8 +35,12 @@ function App() {
               <div className="sideBar">
                 <SideNavbar />
               </div>
-              <div className="ms-3 container-fluid">
-              <Staking />
+              <div className="rightPortion container-fluid">
+                <BrowserRouter>
+                  <Routes>
+                    <Route path='/' element={<Staking />} />
+                  </Routes>
+                </BrowserRouter>
               </div>
             </div>
           </div>
