@@ -15,7 +15,6 @@ body {
   min-height: 100vh !important;
   background: rgb(29, 35, 67) !important;
   width: 100%;
-  font-family: "Libre Franklin", sans-serif !important;
   overflow-x: hidden !important;
 }
 
@@ -28,4 +27,7 @@ body {
   @include for-size(phone-only){
     margin-left:  0 !important;
   }
+}
+.flex-1{
+  flex: 1;
 }

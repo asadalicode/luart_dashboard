@@ -11,6 +11,7 @@ import {
   Route,
   Navigate
 } from "react-router-dom";
+import Liquidity from './modules/home/components/Liquidity/liquidity';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
                 <BrowserRouter>
                   <Routes>
                     <Route path='/' element={<Staking />} />
+                    <Route path='/liquidity' element={<Liquidity />} />
                   </Routes>
                 </BrowserRouter>
               </div>

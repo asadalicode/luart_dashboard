@@ -1,0 +1,230 @@
+@import "../../../../theme/mixings.scss";
+
+.container {
+    .title {
+        margin: 0px;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 48px;
+        @include for-size(phone-only){
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .description {
+        margin: 0px 0px 2rem;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--white);
+    }
+
+    .flexBox {
+        width: 100%;
+        gap: 2rem;
+
+        .formBox {
+            width: 70%;
+            .form {
+                background: rgba(255, 255, 255, 0.04);
+                box-sizing: border-box;
+                border: 1px solid var(--borderColor);
+                border-radius: 0.5rem;
+
+                .btnContainer {
+                    .selectedBtn {
+                        color: var(--white) !important;
+                        background: rgba(255, 255, 255, 0.08) !important;
+                    }
+
+                    .btn {
+                        flex: 1;
+                        background: rgba(255, 255, 255, 0.04);
+                        text-transform: none;
+                        color: rgba(255, 255, 255, 0.52);
+                        font-size: 16px;
+                        opacity: 1;
+                        border: none;
+                        height: 3rem;
+                        transition: color 350ms ease 0s;
+                        position: relative;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+                    }
+                }
+
+                .formContainer {
+                    .submitBtn {
+                        width: 100%;
+                        background-color: var(--successColor);
+                        border: none;
+                        padding: 12px;
+                        border-radius: 5px;
+                        color: var(--offBlack);
+                        font-weight: 600;
+                        margin: 2rem 0;
+                        font-size: 1rem;
+                    }
+
+                    padding: 1.2rem;
+
+                    .title {
+                        margin: 0px;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        line-height: 24px;
+                    }
+
+                    .despositInputContainer {
+                        height: 48px;
+                        margin-top: 0.5rem;
+                        padding: 12px 16px;
+                        background: rgba(255, 255, 255, 0.04);
+                        border: 1px solid rgba(255, 255, 255, 0.18);
+                        border-radius: 6px;
+                        font-size: 16px;
+                        box-sizing: border-box;
+
+                        input {
+                            padding: 4px 0px 5px;
+                            border: 0px;
+                            background: none;
+                            height: 1.4375em;
+                            outline: none;
+                            width: 100%;
+                        }
+
+                        button {
+                            font-size: 1rem;
+                            border: none;
+                            margin: 0;
+                            padding: 0;
+                            margin-top: -2px;
+                            line-height: 1.75;
+                            background-color: transparent;
+                            min-width: 64px;
+                            border-radius: 4px;
+                            color: var(--successColor);
+                        }
+                    }
+
+                    .luartAvaibleText {
+                        color: var(--offWhite);
+                        text-decoration: underline;
+                        font-size: 0.9rem;
+                    }
+
+                    .unboundingPeriod {
+                        padding: 1rem;
+                        border-radius: 5px;
+                        background: rgba(34, 138, 237, 0.18);
+                        border: 1px solid rgb(34, 138, 237);
+
+                        .title {
+                            font-size: 0.8rem;
+                            font-weight: 600;
+                            line-height: 20px;
+                            color: var(--white);
+                        }
+                    }
+                }
+            }
+        }
+
+        .overview {
+            width: 30%;
+
+            .overviewContainer {
+                background: rgba(255, 255, 255, 0.04);
+                box-sizing: border-box;
+                border: 1px solid var(--borderColor);
+                border-radius: 0.5rem;
+                padding: 1.7rem;
+                @include for-size(phone-only){
+                    padding: 0.8rem ;
+                }
+                .upIcon{
+                    height: 17px;
+                    width: 16px;
+                }
+                .title {
+                    margin-bottom: 0.5rem;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    line-height: 24px;
+                }
+
+                .myValue {
+                    margin: 2rem 0px 0.5rem;
+                }
+
+                .claimCommission {
+                    font-size: 12px;
+                    color: var(--offWhite);
+                    position: relative;
+                    top: -8px;
+                }
+
+                .overviewBox {
+                    margin-bottom: 0.5rem;
+
+                    .title,
+                    .value {
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: var(--white);
+                        margin: 0;
+                    }
+
+                    .claim {
+                        color: var(--offWhite);
+                        opacity: 0.5;
+                        font-weight: 600;
+                        padding: 0 5px;
+                    }
+                }
+
+                .liquidityBtn {
+                    margin-top: 1.6rem;
+                    border-radius: 5px;
+                    box-shadow: none;
+                    background: rgba(255, 255, 255, 0.04);
+                    font-weight: 600;
+                    width: 100%;
+                    padding: 12px 24px;
+                    font-size: 1rem;
+                    border: 1px solid var(--borderColor);
+                    color: var(--white) !important;
+                }
+            }
+        }
+
+        @include for-size(phone-only) {
+            flex-direction: column;
+
+            .formBox {
+                order: 2;
+                width: 100%;
+            }
+
+            .overview {
+                order: 1;
+                width: 100%;
+            }
+        }
+
+        @include for-size(tablet-portrait-up) {
+            flex-direction: column;
+
+            .formBox {
+                order: 2;
+                width: 100%;
+            }
+
+            .overview {
+                order: 1;
+                width: 100%;
+            }
+        }
+    }
+}

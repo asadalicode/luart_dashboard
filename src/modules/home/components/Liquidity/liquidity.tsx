@@ -1,4 +1,4 @@
-import Style from "./staking.module.scss";
+import Style from "./liquidity.module.scss";
 import { ReactComponent as InfoIcon } from "../../../../assets/images/info.svg";
 import { ReactComponent as ArrowDownIcon } from "../../../../assets/images/arrowDown.svg";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -6,20 +6,21 @@ import { useEffect, useState } from "react";
 
 const overviewData = {
     overview: [
-        { title: 'APY', value: '10.98%' },
-        { title: 'Total staked', value: '11,871,134.01 $LUAR' }
+        { title: 'APY', value: '111.94%' },
+        { title: 'Total staked', value: '1,850,791.55 LP' }
     ],
     myValue: [
-        { title: 'Available', claim: false, value: '0.00 $LUART' },
-        { title: 'Staked', claim: false, value: '0.00 $LUART' },
+        { title: 'Available', claim: false, value: '0.00 LP' },
+        { title: 'Staked', claim: false, value: '0.00 LP' },
         { title: 'Rewards', claim: true, value: '0.00 $LUART' },
     ]
 
 }
 
-const Staking = () => {
+const Liquidity = () => {
 
-    const [isStake, setIstake] = useState(true);
+    const [isPoolorStake, setIsPoolStake] = useState(true);
+    const [isProvidePool, setProvidePool] = useState(true);
     const [isMobileTab, setIsMobileTab] = useState(false);
     const [isShowOverviewData, setIsShowOverviewData] = useState(true);
 
@@ -39,7 +40,7 @@ const Staking = () => {
 
 
     const handleStake = (value: boolean) => {
-        setIstake(value);
+        setIsPoolStake(value);
     }
 
     const handleOverviewData = () => {
@@ -50,22 +51,46 @@ const Staking = () => {
         <div className={` mt-5  ${Style.container} mb-5`}>
 
             <h5 className={Style.title}>
-                Staking $LUART
+                $LUART-UST Liquidity
             </h5>
             <p className={Style.description}>
-                Stake your $LUART tokens for an annual percentage yield (APY).
+                Input equal amounts of $LUART and $UST to add liquidity into our pool to earn rewards.
             </p>
             <div className={`${Style.flexBox} d-flex`}>
                 <div className={Style.formBox}>
                     <div className={Style.form}>
                         <div className={`d-flex ${Style.btnContainer}`}>
-                            <button onClick={() => handleStake(true)} className={`${Style.btn} ${isStake ? Style.selectedBtn : ''}`}>Stake</button>
-                            <button onClick={() => handleStake(false)} className={`${Style.btn} ${!isStake ? Style.selectedBtn : ''}`}>Unstake</button>
+                            <button onClick={() => handleStake(true)} className={`${Style.btn} ${isPoolorStake ? Style.selectedBtn : ''}`}>
+                                Pool
+                            </button>
+                            <button onClick={() => handleStake(false)} className={`${Style.btn} ${!isPoolorStake ? Style.selectedBtn : ''}`}>
+                                Staking
+                            </button>
                         </div>
                         <form className={Style.formContainer}>
+
+
+                            <div className="align-items-center d-flex">
+                                <div className="flex-1">
+                                    <label>Input $LUART</label>
+                                    <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                                        <input className="ms-3" placeholder='0.00' />
+                                    </div>
+                                </div>
+                                <div className="mx-4">
+                                  <span>+</span>
+                                </div>
+                                <div  className="flex-1">
+                                    <label>Input $LUART</label>
+                                    <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                                        <input className="ms-3" placeholder='0.00' />
+                                    </div>
+                                </div>
+                            </div>
+
                             <h5 className={Style.title}>
                                 {
-                                    isStake ? 'Depositing' : 'Withdrawing'
+                                    isPoolorStake ? 'Depositing' : 'Withdrawing'
                                 }
                             </h5>
                             <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
@@ -78,7 +103,7 @@ const Staking = () => {
                             </div>
                             <button className={`${Style.submitBtn}`} type="button">Connect Wallet</button>
                             {
-                                isStake &&
+                                isPoolorStake &&
                                 <div className={`d-flex align-items-center ${Style.unboundingPeriod}`}>
                                     <InfoIcon height={20} fill="rgb(34, 138, 237)" /> <span className={`ms-2 ${Style.title}`}> Unbounding Period - 5 Days</span>
                                 </div>
@@ -88,14 +113,14 @@ const Staking = () => {
                 </div>
                 <div className={Style.overview}>
                     <div className={Style.overviewContainer}>
-                        <div className={`d-flex justify-content-between ${(isShowOverviewData && isMobileTab)? 'mb-4' :''}`}>
+                        <div className={`d-flex justify-content-between ${isShowOverviewData && isMobileTab ? 'mb-4' : ''}`}>
                             <h6 className={`${Style.title}`}>Overview</h6>
                             {
                                 isMobileTab &&
                                 <span onClick={handleOverviewData}>
                                     {!isShowOverviewData ?
                                         <ArrowDownIcon /> :
-                                        <ArrowUpwardIcon className={Style.upIcon}/>
+                                        <ArrowUpwardIcon className={Style.upIcon} />
                                     }
                                 </span>
                             }
@@ -140,7 +165,7 @@ const Staking = () => {
                                     <span className={Style.claimCommission}>*Claim commission is 1 $UST</span>
                                     <div>
                                         <button className={Style.liquidityBtn}>
-                                            Liquidity Providing & Staking
+                                            Single Asset Staking
                                         </button>
                                     </div>
                                 </div>
@@ -148,10 +173,10 @@ const Staking = () => {
                         }
                     </div>
                 </div>
-            </div>
+            </div >
 
-        </div>
+        </div >
 
     );
 }
-export default Staking;
+export default Liquidity;
