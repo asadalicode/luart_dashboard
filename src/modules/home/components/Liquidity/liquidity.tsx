@@ -1,6 +1,7 @@
 import Style from "./liquidity.module.scss";
 import { ReactComponent as InfoIcon } from "../../../../assets/images/info.svg";
 import { ReactComponent as ArrowDownIcon } from "../../../../assets/images/arrowDown.svg";
+import { ReactComponent as PlusIcon } from "../../../../assets/images/plusIcon.svg";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import { useEffect, useState } from "react";
 
@@ -19,7 +20,7 @@ const overviewData = {
 
 const Liquidity = () => {
 
-    const [isPoolorStake, setIsPoolStake] = useState(true);
+    const [isPoolStake, setIsPoolStake] = useState(true);
     const [isProvidePool, setProvidePool] = useState(true);
     const [isMobileTab, setIsMobileTab] = useState(false);
     const [isShowOverviewData, setIsShowOverviewData] = useState(true);
@@ -42,6 +43,9 @@ const Liquidity = () => {
     const handleStake = (value: boolean) => {
         setIsPoolStake(value);
     }
+    const handleProvidePool = (value: boolean) => {
+        setProvidePool(value);
+    }
 
     const handleOverviewData = () => {
         setIsShowOverviewData((prev) => !prev);
@@ -60,55 +64,83 @@ const Liquidity = () => {
                 <div className={Style.formBox}>
                     <div className={Style.form}>
                         <div className={`d-flex ${Style.btnContainer}`}>
-                            <button onClick={() => handleStake(true)} className={`${Style.btn} ${isPoolorStake ? Style.selectedBtn : ''}`}>
+                            <button onClick={() => handleStake(true)} className={`${Style.btn} ${isPoolStake ? Style.selectedBtn : ''}`}>
                                 Pool
                             </button>
-                            <button onClick={() => handleStake(false)} className={`${Style.btn} ${!isPoolorStake ? Style.selectedBtn : ''}`}>
+                            <button onClick={() => handleStake(false)} className={`${Style.btn} ${!isPoolStake ? Style.selectedBtn : ''}`}>
                                 Staking
                             </button>
                         </div>
-                        <form className={Style.formContainer}>
+                        <div className={Style.formContainer}>
+                            <div className={`d-flex ${Style.providalbtnContainer}`}>
+                                <button onClick={() => handleProvidePool(true)} className={`${Style.btn} ${isProvidePool ? Style.selectedBtn : ''}`}>
+                                    {
+                                        isPoolStake ? 'Provide' : 'Stake'
+                                    }
+                                </button>
+                                <button onClick={() => handleProvidePool(false)} className={`${Style.btn} ${!isProvidePool ? Style.selectedBtn : ''}`}>
+                                    {
+                                        isPoolStake ? 'Withdraw' : 'Unstake'
+                                    }
 
-
-                            <div className="align-items-center d-flex">
-                                <div className="flex-1">
-                                    <label>Input $LUART</label>
-                                    <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
-                                        <input className="ms-3" placeholder='0.00' />
-                                    </div>
-                                </div>
-                                <div className="mx-4">
-                                  <span>+</span>
-                                </div>
-                                <div  className="flex-1">
-                                    <label>Input $LUART</label>
-                                    <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
-                                        <input className="ms-3" placeholder='0.00' />
-                                    </div>
-                                </div>
+                                </button>
                             </div>
-
-                            <h5 className={Style.title}>
-                                {
-                                    isPoolorStake ? 'Depositing' : 'Withdrawing'
-                                }
-                            </h5>
-                            <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
-                                <label>$LUART</label>
-                                <input className="ms-3" placeholder='0.00' />
-                                <button>MAX</button>
-                            </div>
-                            <div className={`mt-2 d-flex justify-content-end`}>
-                                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
-                            </div>
-                            <button className={`${Style.submitBtn}`} type="button">Connect Wallet</button>
                             {
-                                isPoolorStake &&
-                                <div className={`d-flex align-items-center ${Style.unboundingPeriod}`}>
-                                    <InfoIcon height={20} fill="rgb(34, 138, 237)" /> <span className={`ms-2 ${Style.title}`}> Unbounding Period - 5 Days</span>
-                                </div>
+                                (isPoolStake && isProvidePool) &&
+                                <form >
+                                    <div className="align-items-center d-flex">
+                                        <div className="flex-1">
+                                            <label className={Style.title}>Input $LUART</label>
+                                            <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                                                <input className="ms-3" placeholder='0.00' />
+                                            </div>
+                                            <div className={`mt-2 d-flex justify-content-end`}>
+                                                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+                                            </div>
+                                        </div>
+                                        <div className="mx-4 mt-4">
+                                            <PlusIcon fill="rgba(255, 255, 255, 0.52)" />
+                                        </div>
+                                        <div className="flex-1">
+                                            <label className={Style.title}>Input $LUART</label>
+                                            <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                                                <input className="ms-3" placeholder='0.00' />
+                                            </div>
+                                            <div className={`mt-2 d-flex justify-content-end`}>
+                                                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h5 className={Style.title}>
+                                        $LUART-UST LP
+                                    </h5>
+                                    <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                                        <label>LP</label>
+                                        <input className="ms-3" placeholder='0.00' />
+                                    </div>
+                                    <button className={`${Style.submitBtn}`} type="button">Connect Wallet</button>
+                                    {/* {
+                                    isPoolStake &&
+                                    <div className={`d-flex align-items-center ${Style.unboundingPeriod}`}>
+                                        <InfoIcon height={20} fill="rgb(34, 138, 237)" /> <span className={`ms-2 ${Style.title}`}> Unbounding Period - 5 Days</span>
+                                    </div>
+                                } */}
+                                </form>
                             }
-                        </form>
+                            {
+                                (isPoolStake && !isProvidePool) &&
+                                <Withdraw />
+                            }
+                            {
+                                (!isPoolStake && isProvidePool) &&
+                                <Stake />
+                            }
+                            {
+                                (!isPoolStake && !isProvidePool) &&
+                                <Unstake />
+                            }
+                        </div>
                     </div>
                 </div>
                 <div className={Style.overview}>
@@ -180,3 +212,78 @@ const Liquidity = () => {
     );
 }
 export default Liquidity;
+
+const Withdraw = () => {
+    return (
+        <form >
+            <h5 className={Style.title}>
+                $LUART-UST LP
+            </h5>
+            <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                <label>LP</label>
+                <input className="ms-3" placeholder='0.00' />
+            </div>
+            <div className={`mt-2 d-flex justify-content-end`}>
+                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+            </div>
+            <div className="align-items-center d-flex mt-4">
+                <div className="flex-1">
+                    <label className={Style.title}>Implemented $LUART</label>
+                    <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                        <input className="ms-3" placeholder='0.00' />
+                    </div>
+                </div>
+                <div className="mx-4 mt-4">
+                    <PlusIcon fill="rgba(255, 255, 255, 0.52)" />
+                </div>
+                <div className="flex-1">
+                    <label className={Style.title}>Implemented $UST</label>
+                    <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                        <input className="ms-3" placeholder='0.00' />
+                    </div>
+                </div>
+            </div>
+
+            <button className={`${Style.submitBtn}`} type="button">Connect Wallet</button>
+        </form>
+    );
+}
+
+const Stake = () => {
+    return (
+        <form >
+            <h5 className={Style.title}>
+                $LUART-UST LP
+            </h5>
+            <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                <label>LP</label>
+                <input className="ms-3" placeholder='0.00' />
+                <button>MAX</button>
+            </div>
+            <div className={`mt-2 d-flex justify-content-end`}>
+                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+            </div>
+            <button className={`${Style.submitBtn}`} type="button">Connect Wallet</button>
+            <div className={`d-flex align-items-center ${Style.unboundingPeriod}`}>
+                <InfoIcon height={20} fill="rgb(34, 138, 237)" /> <span className={`ms-2 ${Style.title}`}> Unbounding Period - 5 Days</span>
+            </div>
+        </form>
+    )
+}
+const Unstake = () => {
+    return (
+        <form >
+            <h5 className={Style.title}>
+                $LUART-UST LP
+            </h5>
+            <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
+                <label>LP</label>
+                <input className="ms-3" placeholder='0.00' />
+            </div>
+            <div className={`mt-2 d-flex justify-content-end`}>
+                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+            </div>
+            <button className={`${Style.submitBtn}`} type="button">Connect Wallet</button>
+        </form>
+    )
+}

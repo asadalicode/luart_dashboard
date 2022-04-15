@@ -8,7 +8,8 @@
         font-weight: 700;
         color: var(--white);
         line-height: 48px;
-        @include for-size(phone-only){
+
+        @include for-size(phone-only) {
             margin-bottom: 0 !important;
         }
     }
@@ -26,6 +27,7 @@
 
         .formBox {
             width: 70%;
+
             .form {
                 background: rgba(255, 255, 255, 0.04);
                 box-sizing: border-box;
@@ -43,13 +45,34 @@
                         background: rgba(255, 255, 255, 0.04);
                         text-transform: none;
                         color: rgba(255, 255, 255, 0.52);
-                        font-size: 16px;
-                        opacity: 1;
+                        font-size: 1rem;
                         border: none;
                         height: 3rem;
-                        transition: color 350ms ease 0s;
-                        position: relative;
                         border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+                    }
+                }
+
+                .providalbtnContainer {
+                    border: 1px solid rgba(255, 255, 255, 0.11);
+                    background: rgba(255, 255, 255, 0.04);
+                    padding: 4px;
+                    border-radius: 5px;
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+                    min-height: 36px;
+
+                    .selectedBtn {
+                        background: rgba(236, 235, 235, 0.1) !important;
+                    }
+
+                    .btn {
+                        flex: 1;
+                        background-color: transparent;
+                        text-transform: none;
+                        color: rgba(255, 255, 255, 0.52);
+                        font-size: 1rem;
+                        border-radius: 5px;
+                        border: none;
                     }
                 }
 
@@ -140,13 +163,16 @@
                 border: 1px solid var(--borderColor);
                 border-radius: 0.5rem;
                 padding: 1.7rem;
-                @include for-size(phone-only){
-                    padding: 0.8rem ;
+
+                @include for-size(phone-only) {
+                    padding: 0.8rem;
                 }
-                .upIcon{
+
+                .upIcon {
                     height: 17px;
                     width: 16px;
                 }
+
                 .title {
                     margin-bottom: 0.5rem;
                     font-size: 1rem;
