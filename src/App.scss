@@ -34,6 +34,9 @@ body {
   @include for-size(phone-only) {
     margin-left: 0 !important;
   }
+  @include for-size(tablet-portrait-up) {
+    margin-left: 0 !important;
+  }
 }
 .flex-1 {
   flex: 1;

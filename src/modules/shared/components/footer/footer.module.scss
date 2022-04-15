@@ -15,6 +15,9 @@
       margin-bottom: 2.7rem;
     }
 
+    @include for-size(tablet-portrait-up) {
+        margin-bottom: 2.7rem;
+      }
     .widgetTitle {
       font-weight: 600;
       font-size: 16px;
