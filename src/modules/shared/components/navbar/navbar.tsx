@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import Style from './navbar.module.scss';
-import logo from '../../../../assets/images/logo.svg';
+import logo from '../../../../assets/images/logo.png';
 import { ReactComponent as Wallet } from '../../../../assets/images/wallet.svg';
 import { ReactComponent as MenuIcon } from '../../../../assets/images/menu.svg';
 import { ReactComponent as CrossIcon } from '../../../../assets/images/cross.svg';
@@ -54,7 +54,7 @@ const Navbar = ({ handleMobileNavbar }: any) => {
                     <Toolbar className='mx-3' disableGutters>
 
                         <Box sx={{ flexGrow: 1 }}>
-                            <img src={logo} />
+                            <img className={Style.logo} src={logo} />
                         </Box>
                         <Box sx={{ display: 'flex' }}>
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

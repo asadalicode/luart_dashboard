@@ -10,9 +10,9 @@ const overviewData = {
         { title: 'Total staked', value: '11,871,134.01 $LUAR' }
     ],
     myValue: [
-        { title: 'Available', claim: false, value: '0.00 $LUART' },
-        { title: 'Staked', claim: false, value: '0.00 $LUART' },
-        { title: 'Rewards', claim: true, value: '0.00 $LUART' },
+        { title: 'Available', claim: false, value: '0.00 $BAY' },
+        { title: 'Staked', claim: false, value: '0.00 $BAY' },
+        { title: 'Rewards', claim: true, value: '0.00 $BAY' },
     ]
 
 }
@@ -83,7 +83,7 @@ const Trade = () => {
                                 <input className="ms-3" placeholder='0.00' />
                             </div>
                             <div className={`mt-2 d-flex justify-content-end`}>
-                                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+                                <span className={Style.luartAvaibleText}> 0.00 $BAY Available</span>
                             </div>
                             <h5 className={Style.title}>
                                 RECEIVER ADDRESS

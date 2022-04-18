@@ -4,7 +4,7 @@ import footerLogo from '../../../../assets/images/footerLogo.svg';
 const Footer = () => {
     return (
         <footer id="footer" className={Style.footer}>
-            <div className="main-footer widgets-dark typo-light">
+            <div className="main-footer widgets-dark typo-light container">
                 <div className="container d-flex justify-content-center">
                     <div className="row">
 

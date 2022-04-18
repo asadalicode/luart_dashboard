@@ -10,9 +10,9 @@ const overviewData = {
         { title: 'Total staked', value: '11,871,134.01 $LUAR' }
     ],
     myValue: [
-        { title: 'Available', claim: false, value: '0.00 $LUART' },
-        { title: 'Staked', claim: false, value: '0.00 $LUART' },
-        { title: 'Rewards', claim: true, value: '0.00 $LUART' },
+        { title: 'Available', claim: false, value: '0.00 $BAY' },
+        { title: 'Staked', claim: false, value: '0.00 $BAY' },
+        { title: 'Rewards', claim: true, value: '0.00 $BAY' },
     ]
 
 }
@@ -49,10 +49,10 @@ const Staking = () => {
     return (
         <div className={` mt-5  ${Style.container} mb-5`}>
             <h5 className={Style.title}>
-                Staking $LUART
+                Staking $BAY
             </h5>
             <p className={Style.description}>
-                Stake your $LUART tokens for an annual percentage yield (APY).
+                Stake your $BAY tokens for an annual percentage yield (APY).
             </p>
             <div className={`${Style.flexBox} d-flex`}>
                 <div className={Style.formBox}>
@@ -68,12 +68,12 @@ const Staking = () => {
                                 }
                             </h5>
                             <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
-                                <label>$LUART</label>
+                                <label>$BAY</label>
                                 <input className="ms-3" placeholder='0.00' />
                                 <button>MAX</button>
                             </div>
                             <div className={`mt-2 d-flex justify-content-end`}>
-                                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+                                <span className={Style.luartAvaibleText}> 0.00 $BAY Available</span>
                             </div>
                             <button className={`${Style.submitBtn}`} type="button">Connect Wallet</button>
                             {

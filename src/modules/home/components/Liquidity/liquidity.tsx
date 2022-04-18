@@ -13,7 +13,7 @@ const overviewData = {
     myValue: [
         { title: 'Available', claim: false, value: '0.00 LP' },
         { title: 'Staked', claim: false, value: '0.00 LP' },
-        { title: 'Rewards', claim: true, value: '0.00 $LUART' },
+        { title: 'Rewards', claim: true, value: '0.00 $BAY' },
     ]
 
 }
@@ -55,10 +55,10 @@ const Liquidity = () => {
         <div className={` mt-5  ${Style.container} mb-5`}>
 
             <h5 className={Style.title}>
-                $LUART-UST Liquidity
+                $BAY-UST Liquidity
             </h5>
             <p className={Style.description}>
-                Input equal amounts of $LUART and $UST to add liquidity into our pool to earn rewards.
+                Input equal amounts of $BAY and $UST to add liquidity into our pool to earn rewards.
             </p>
             <div className={`${Style.flexBox} d-flex`}>
                 <div className={Style.formBox}>
@@ -90,30 +90,30 @@ const Liquidity = () => {
                                 <form >
                                     <div className="align-items-center d-flex">
                                         <div className="flex-1">
-                                            <label className={Style.title}>Input $LUART</label>
+                                            <label className={Style.title}>Input $BAY</label>
                                             <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
                                                 <input className="ms-3" placeholder='0.00' />
                                             </div>
                                             <div className={`mt-2 d-flex justify-content-end`}>
-                                                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+                                                <span className={Style.luartAvaibleText}> 0.00 $BAY Available</span>
                                             </div>
                                         </div>
                                         <div className="mx-4 mt-4">
                                             <PlusIcon fill="rgba(255, 255, 255, 0.52)" />
                                         </div>
                                         <div className="flex-1">
-                                            <label className={Style.title}>Input $LUART</label>
+                                            <label className={Style.title}>Input $BAY</label>
                                             <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
                                                 <input className="ms-3" placeholder='0.00' />
                                             </div>
                                             <div className={`mt-2 d-flex justify-content-end`}>
-                                                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+                                                <span className={Style.luartAvaibleText}> 0.00 $BAY Available</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <h5 className={Style.title}>
-                                        $LUART-UST LP
+                                        $BAY-UST LP
                                     </h5>
                                     <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
                                         <label>LP</label>
@@ -217,18 +217,18 @@ const Withdraw = () => {
     return (
         <form >
             <h5 className={Style.title}>
-                $LUART-UST LP
+                $BAY-UST LP
             </h5>
             <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
                 <label>LP</label>
                 <input className="ms-3" placeholder='0.00' />
             </div>
             <div className={`mt-2 d-flex justify-content-end`}>
-                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+                <span className={Style.luartAvaibleText}> 0.00 $BAY Available</span>
             </div>
             <div className="align-items-center d-flex mt-4">
                 <div className="flex-1">
-                    <label className={Style.title}>Implemented $LUART</label>
+                    <label className={Style.title}>Implemented $BAY</label>
                     <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
                         <input className="ms-3" placeholder='0.00' />
                     </div>
@@ -253,7 +253,7 @@ const Stake = () => {
     return (
         <form >
             <h5 className={Style.title}>
-                $LUART-UST LP
+                $BAY-UST LP
             </h5>
             <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
                 <label>LP</label>
@@ -261,7 +261,7 @@ const Stake = () => {
                 <button>MAX</button>
             </div>
             <div className={`mt-2 d-flex justify-content-end`}>
-                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+                <span className={Style.luartAvaibleText}> 0.00 $BAY Available</span>
             </div>
             <button className={`${Style.submitBtn}`} type="button">Connect Wallet</button>
             <div className={`d-flex align-items-center ${Style.unboundingPeriod}`}>
@@ -274,14 +274,14 @@ const Unstake = () => {
     return (
         <form >
             <h5 className={Style.title}>
-                $LUART-UST LP
+                $BAY-UST LP
             </h5>
             <div className={`d-flex align-items-center ${Style.despositInputContainer}`}>
                 <label>LP</label>
                 <input className="ms-3" placeholder='0.00' />
             </div>
             <div className={`mt-2 d-flex justify-content-end`}>
-                <span className={Style.luartAvaibleText}> 0.00 $LUART Available</span>
+                <span className={Style.luartAvaibleText}> 0.00 $BAY Available</span>
             </div>
             <button className={`${Style.submitBtn}`} type="button">Connect Wallet</button>
         </form>
