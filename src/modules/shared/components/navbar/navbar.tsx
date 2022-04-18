@@ -51,7 +51,7 @@ const Navbar = ({ handleMobileNavbar }: any) => {
         <>
             <AppBar position="static" className={Style.barContainer}>
                 <div className='container'>
-                    <Toolbar disableGutters>
+                    <Toolbar className='mx-3' disableGutters>
 
                         <Box sx={{ flexGrow: 1 }}>
                             <img src={logo} />
