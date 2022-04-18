@@ -38,7 +38,6 @@ const Navbar = ({ handleMobileNavbar }: any) => {
         _pages[currentActive].acitveItem = true;
         setPages([...pages]);
         setCurrentActive(index);
-        debugger;
         navigate(pages[index].route);
     }
 
