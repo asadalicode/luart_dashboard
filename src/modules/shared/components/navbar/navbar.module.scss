@@ -36,8 +36,9 @@
     }
 
     .navItem {
-        font-family: Inter, sans-serif;
+        font-family: myFirstFont;
         transition: color 350ms ease 0s;
+        letter-spacing: 1.2px;
         font-size: 14px;
         font-weight: 700;
         line-height: 34px;

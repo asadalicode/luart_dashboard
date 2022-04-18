@@ -1,5 +1,11 @@
 @import "./theme/mixings.scss";
 
+@font-face {
+  font-family: myFirstFont;
+  src: url("./assets/grifterFont/grifterbold.otf");
+  /* IE9 Compat Modes */
+}
+
 :root {
   --white: rgba(255, 255, 255, 0.88);
   --offWhite: rgba(255, 255, 255, 0.52);
@@ -7,6 +13,12 @@
   --offBlack: rgba(33, 33, 33, 0.72) !important;
   --successColor: rgb(34, 237, 166);
   --borderColor: rgba(104, 102, 102, 0.18);
+}
+
+* {
+  // font-family: myFirstFont;
+  // letter-spacing: 1.2px;
+
 }
 
 body {
