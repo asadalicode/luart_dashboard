@@ -8,39 +8,20 @@ import logo from '../../../../assets/images/logo.svg';
 import { ReactComponent as Wallet } from '../../../../assets/images/wallet.svg';
 import { ReactComponent as MenuIcon } from '../../../../assets/images/menu.svg';
 import { ReactComponent as CrossIcon } from '../../../../assets/images/cross.svg';
-import { ReactComponent as DashboardIcon } from '../../../../assets/images/dashboard.svg';
-import { ReactComponent as TradeIcon } from '../../../../assets/images/trade.svg';
-import { ReactComponent as StakingIcon } from '../../../../assets/images/staking.svg';
-import { ReactComponent as Liquiditycon } from '../../../../assets/images/liquidity.svg';
-import { ReactComponent as VestingIcon } from '../../../../assets/images/vesting.svg';
-import { ReactComponent as LeaderboardIcon } from '../../../../assets/images/leaderboard.svg';
-import { ReactComponent as MarketplaceIcon } from '../../../../assets/images/marketplace.svg';
-import { ReactComponent as LaunchpadIcon } from '../../../../assets/images/launchpad.svg';
+
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const pages = ['Launchpad', 'Marketplace'];
-const sideBarPagesList =
-    [
-        { Icon: DashboardIcon, title: 'Dashboard', acitveItem: false },
-        { Icon: TradeIcon, title: 'Trade', acitveItem: false },
-        { Icon: StakingIcon, title: 'Staking', acitveItem: true },
-        { Icon: Liquiditycon, title: 'Liquidity', acitveItem: false },
-        { Icon: VestingIcon, title: 'Vesting', acitveItem: false }
-    ]
-
-const sideBarPages1 = [
-    { Icon: LeaderboardIcon, title: 'Leaderboard' },
-    { Icon: MarketplaceIcon, title: 'Marketplace' },
-    { Icon: LaunchpadIcon, title: 'Launchpad' }
-]
-
-
+const pagesList = [
+    { title: 'Staking', acitveItem: true, route: '/' },
+    { title: 'Liquidity', acitveItem: false, route: '/liquidity' },
+    { title: 'Trade', acitveItem: false, route: '/trade' },
+];
 
 const Navbar = ({ handleMobileNavbar }: any) => {
     const [isMenueOpen, setIsMenuOpen] = useState(false);
-    const [sideBarPages, setsideBarPages] = useState([...sideBarPagesList])
-    const [currentActive, setCurrentActive] = useState(2);
+    const [pages, setPages] = useState([...pagesList]);
+    const [currentActive, setCurrentActive] = useState(0);
 
     let navigate = useNavigate();
     let location = useLocation;
@@ -52,17 +33,13 @@ const Navbar = ({ handleMobileNavbar }: any) => {
     }, [pathname]);
 
     const handleRouting = (index: any) => {
-        if (index === 2 || index === 3) {
-            let _sidebar = [...sideBarPages];
-            _sidebar[index].acitveItem = true;
-            _sidebar[currentActive].acitveItem = false;
-            setCurrentActive(index);
-            setsideBarPages(_sidebar);
-            if (index === 2)
-                navigate("/");
-            else
-                navigate("/liquidity")
-        }
+        let _pages = [...pages];
+        _pages[currentActive].acitveItem = false;
+        _pages[currentActive].acitveItem = true;
+        setPages([...pages]);
+        setCurrentActive(index);
+        debugger;
+        navigate(pages[index].route);
     }
 
     const handleOpenNavMenu = () => {
@@ -82,14 +59,14 @@ const Navbar = ({ handleMobileNavbar }: any) => {
                         </Box>
                         <Box sx={{ display: 'flex' }}>
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                                {pages.map((page) => (
+                                {pages.map((page, index) => (
                                     <Button
-                                        key={page}
-                                        onClick={handleOpenNavMenu}
+                                        key={index}
+                                        onClick={()=>handleRouting(index)}
                                         sx={{ my: 2, color: 'white', display: 'block' }}
                                         className={Style.navItem}
                                     >
-                                        {page}
+                                        {page.title}
                                     </Button>
                                 ))}
 
@@ -136,26 +113,12 @@ const Navbar = ({ handleMobileNavbar }: any) => {
                         <div>
 
                             <h6 className={Style.title}>LUART Application</h6>
-                            {sideBarPages.map((item, index) => {
+                            {pages.map((item, index) => {
                                 return (
                                     <div>
                                         <a
                                             onClick={() => handleRouting(index)}
                                             className={`d-flex align-items-center ${Style.item} ${item.acitveItem ? Style.selectedItem : ''}`}>
-                                            <item.Icon height={20} /> <span className='ms-2'>{item.title}</span>
-                                        </a>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                        <div className='mt-5'>
-
-                            <h6 className={Style.title}>Others</h6>
-                            {sideBarPages1.map((item) => {
-                                return (
-                                    <div>
-                                        <a className={`d-flex align-items-center ${Style.item}`}>
-                                            <item.Icon height={20} /> <span className='ms-2'>{item.title}</span>
                                         </a>
                                     </div>
                                 )

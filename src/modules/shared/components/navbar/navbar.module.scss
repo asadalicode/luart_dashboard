@@ -1,7 +1,7 @@
 @import '../../../../theme/mixings.scss';
 
 .barContainer {
-    background-color: rgb(38, 44, 74) !important;
+    background-color: #0d0628 !important;
     box-shadow: none !important;
     height: 70px;
     box-shadow: none;
@@ -80,7 +80,8 @@
             transition: color 350ms ease 0s;
             border: 1px solid transparent;
         }
-        .selectedItem{
+
+        .selectedItem {
             color: var(--white);
         }
     }

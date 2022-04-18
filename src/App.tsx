@@ -12,6 +12,7 @@ import {
   Navigate
 } from "react-router-dom";
 import Liquidity from './modules/home/components/Liquidity/liquidity';
+import Trade from './modules/home/components/trade/trade';
 
 
 function App() {
@@ -29,17 +30,15 @@ function App() {
         {
           !isMobileNavbarOpen &&
           <>
-            <div className="container-fluid">
+            <div className="container-ss">
 
               <div className="d-flex">
-                <div className="sideBar">
-                  <SideNavbar />
-                </div>
                 <div className="rightPortion container-fluid">
 
                   <Routes>
                     <Route path='/' element={<Staking />} />
                     <Route path='/liquidity' element={<Liquidity />} />
+                    <Route path='/trade' element={<Trade />} />
                   </Routes>
                 </div>
               </div>

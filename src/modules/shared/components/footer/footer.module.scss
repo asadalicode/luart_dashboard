@@ -2,7 +2,6 @@
 
 .footer {
   width: 100%;
-  background: rgba(255, 255, 255, 0.04);
   //   padding: 50px 16px;
   //   color: rgba(255, 255, 255, 0.88);
   padding: 68px 0px;
@@ -13,6 +12,7 @@
   }
 
   .footerSubContainer {
+    width: 75%;
     @include for-size(phone-only) {
       margin-bottom: 2.7rem;
     }
