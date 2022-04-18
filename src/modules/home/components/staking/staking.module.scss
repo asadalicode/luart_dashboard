@@ -25,9 +25,11 @@
         gap: 2rem;
 
         .formBox {
+           
             width: 70%;
             .form {
-                background: rgba(255, 255, 255, 0.04);
+                background: rgba(68, 68, 68, 0.4);
+                backdrop-filter: blur(10px);
                 box-sizing: border-box;
                 border: 1px solid var(--borderColor);
                 border-radius: 0.5rem;
@@ -56,7 +58,7 @@
                 .formContainer {
                     .submitBtn {
                         width: 100%;
-                        background-color: var(--successColor);
+                        background-color: var(--btnBackground);
                         border: none;
                         padding: 12px;
                         border-radius: 5px;
@@ -80,7 +82,7 @@
                         margin-top: 0.5rem;
                         padding: 12px 16px;
                         background: rgba(255, 255, 255, 0.04);
-                        border: 1px solid rgba(255, 255, 255, 0.18);
+                        border: 1px solid var(--borderColor);
                         border-radius: 6px;
                         font-size: 16px;
                         box-sizing: border-box;
@@ -135,7 +137,8 @@
             width: 30%;
 
             .overviewContainer {
-                background: rgba(255, 255, 255, 0.04);
+                background: rgba(68, 68, 68, 0.4);
+                backdrop-filter: blur(10px);
                 box-sizing: border-box;
                 border: 1px solid var(--borderColor);
                 border-radius: 0.5rem;

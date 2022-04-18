@@ -43,6 +43,12 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className='bottomGradient'>
+
+            </div>
+            <div className='rightGradient'>
+
+            </div>
             <Footer />
           </>
         }

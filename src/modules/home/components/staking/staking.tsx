@@ -48,7 +48,6 @@ const Staking = () => {
 
     return (
         <div className={` mt-5  ${Style.container} mb-5`}>
-
             <h5 className={Style.title}>
                 Staking $LUART
             </h5>

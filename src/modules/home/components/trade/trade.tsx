@@ -53,13 +53,13 @@ const Trade = () => {
                 REDACTED.MONEY
             </h5>
             <p className={Style.description}>
-                Stake your $LUART tokens for an annual percentage yield (APY).
+                Lorem ipsum dolor sit amet, consectetur adipiscing  quis nostrud
             </p>
             <p className={Style.description}>
-                Stake your $LUART tokens for an annual percentage yield (APY).  Stake your $LUART tokens for an annual percentage yield (APY).
+                Lorem ipsum dolor sit amet, consectetur adipiscing  quis nostrud   Lorem ipsum dolor sit amet, consectetur adipiscing  quis nostrud
             </p>
             <p className={`${Style.description}`}>
-                Stake your $LUART tokens for an annual percentage yield (APY).
+                Lorem ipsum dolor sit amet, consectetur adipiscing  quis nostrud
             </p>
             <div className={`${Style.flexBox} d-flex`}>
                 <div className={Style.formBox}>

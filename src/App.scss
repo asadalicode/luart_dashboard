@@ -3,9 +3,10 @@
 :root {
   --white: rgba(255, 255, 255, 0.88);
   --offWhite: rgba(255, 255, 255, 0.52);
+  --btnBackground: rgba(153, 152, 152, 0.52);
   --offBlack: rgba(33, 33, 33, 0.72) !important;
   --successColor: rgb(34, 237, 166);
-  --borderColor: rgba(255, 255, 255, 0.18);
+  --borderColor: rgba(104, 102, 102, 0.18);
 }
 
 body {
@@ -58,4 +59,34 @@ body {
 
 .flex-1 {
   flex: 1;
+}
+
+.rightGradient {
+  position: fixed;
+  left: auto;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  z-index: -1;
+  width: 200em;
+  height: 200em;
+  margin-right: -135.7em;
+  margin-bottom: -133.1em;
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, #5c31ff, rgba(92, 49, 255, 0) 69%);
+  opacity: 0.9;
+}
+
+.bottomGradient {
+  position: fixed;
+  left: auto;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  z-index: 2;
+  width: 160em;
+  height: 160em;
+  margin-right: -40.6em;
+  margin-bottom: -133.7em;
+  background-image: radial-gradient(circle farthest-corner at 50% 50%, #f88cd4, rgba(248, 140, 212, 0) 69%);
+  opacity: 0.73;
 }
