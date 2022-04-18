@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const overviewData = {
     overview: [
         { title: 'APY', value: '10.98%' },
-        { title: 'Total staked', value: '11,871,134.01 $LUAR' }
+        { title: 'Total staked', value: '11,871,134.01 $Bay' }
     ],
     myValue: [
         { title: 'Available', claim: false, value: '0.00 $BAY' },

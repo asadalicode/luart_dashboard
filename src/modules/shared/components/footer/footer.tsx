@@ -42,7 +42,7 @@ const Footer = () => {
                         </div>
 
                         <div style={{marginRight:'20px'}} className={`col-12 col-lg-3  ${Style.footerSubContainer}`}>
-                            <h5 className={`${Style.widgetTitle}`}>Platform Luart.io<span></span></h5>
+                            <h5 className={`${Style.widgetTitle}`}>Platform TerraBay<span></span></h5>
                             <ul className={Style.socialList}>
                                 <li >NFT Launchpad</li>
                                 <li >NFT Marketplace</li>
