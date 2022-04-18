@@ -32,7 +32,7 @@
                 backdrop-filter: blur(10px);
                 box-sizing: border-box;
                 border: 1px solid var(--borderColor);
-                border-radius: 0.5rem;
+                border-radius: 1rem;
 
                 .btnContainer {
                     .selectedBtn {
@@ -141,7 +141,7 @@
                 backdrop-filter: blur(10px);
                 box-sizing: border-box;
                 border: 1px solid var(--borderColor);
-                border-radius: 0.5rem;
+                border-radius: 1rem;
                 padding: 1.7rem;
                 @include for-size(phone-only){
                     padding: 0.8rem ;
